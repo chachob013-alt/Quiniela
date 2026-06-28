@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+/* Contenedor principal de la quiniela */
+.bracket-container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); /* 9 columnas iguales */
+    gap: 15px;
+    width: 100%;
+    min-width: 1200px; /* Para asegurar que no se aplaste en móviles */
+    overflow-x: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Cada columna (ronda) */
+.bracket-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribuye los partidos verticalmente */
+    height: 100vh; /* Ajusta según el alto total de tu bracket */
+}
+
+/* Tarjeta de cada partido */
+.match-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+    position: relative;
+}
+
+/* Selectores dentro de la tarjeta */
+.match-card select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.match-title {
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+}
+
+.bracket-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(150px, 1fr));
+    gap: 20px;
+    align-items: center;
+}
+
+.match-box {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+/* Conectores: Crea las líneas hacia la derecha o izquierda */
+.connector-right {
+    border-right: 2px solid #cbd5e0;
+    margin-right: -21px;
+}
+
+.connector-left {
+    border-left: 2px solid #cbd5e0;
+    margin-left: -21px;
+}
+
+
+
+
+
+.bracket-container {
+    display: flex;
+    align-items: flex-start;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 200px;
+}
+
+/* Esto ayuda a conectar visualmente las rondas */
+.column:not(:first-child) {
+    margin-top: 40px; 
+}
