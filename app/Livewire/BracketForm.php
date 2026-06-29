@@ -17,24 +17,46 @@ class BracketForm extends Component
     public $matchesRound1;
     
 
-    public $bracketStructure = [
+    public $bracketStructureizq = [
     'P89' => ['P74', 'P77'], 
     'P90' => ['P73', 'P75'],
+    'P93' => ['P83', 'P84'],
+    'P94' => ['P81', 'P82'],
     'P97' => ['P89', 'P90'],
+    'P98' => ['P93', 'P94'],
     'P101' => ['P97', 'P98'],
     'P104' => ['P101', 'P102'],
 ];
+
+public $bracketStructureder = [
+    'P91' => ['P76', 'P78'], 
+    'P92' => ['P79', 'P80'],
+    'P95' => ['P86', 'P88'],
+    'P96' => ['P85', 'P87'],
+    'P99' => ['P91', 'P92'],
+    'P100' => ['P95', 'P96'],
+    'P102' => ['P99', 'P100'],
+    
+];
     // Estructura del torneo para saber quién avanza a dónde
     public $bracketStructure1 = [
-        // Octavos de final se alimentan de los Dieciseisavos
-        'P89' => ['W74' => 'P74', 'W77' => 'P77'], // El ganador de P74 y P77 van a P89
-        'P90' => ['W73' => 'P73', 'W75' => 'P75'],
-        // Cuartos de final
-        'P97' => ['W89' => 'P89', 'W90' => 'P90'],
-        // Semifinales
-        'P101' => ['W97' => 'P97', 'W98' => 'P98'],
-        // Final
-        'P104' => ['W101' => 'P101', 'W102' => 'P102'],
+       'P89' => ['P74', 'P77'], 
+        'P90' => ['P73', 'P75'],
+        'P93' => ['P83', 'P84'],
+        'P94' => ['P81', 'P82'],
+        'P97' => ['P89', 'P90'],
+        'P98' => ['P93', 'P94'],
+        'P101' => ['P97', 'P98'],
+        'P104' => ['P101', 'P102'],
+        'P91' => ['P76', 'P78'], 
+        'P92' => ['P79', 'P80'],
+        'P95' => ['P86', 'P88'],
+        'P96' => ['P85', 'P87'],
+        'P99' => ['P91', 'P92'],
+        'P100' => ['P95', 'P96'],
+        'P102' => ['P99', 'P100'],
+        'P103' => ['RU101', 'RU102'],
+        'P104' => ['P101', 'P102'],
     ];
     public function getTeamsFormattedProperty() {
             return Team::all()->map(function($team) {
@@ -55,6 +77,7 @@ class BracketForm extends Component
     public function mount()
     {
         $this->teams = Team::all()->keyBy('id');
+       
         // Inicializar los cruces iniciales (Fase de 32)
         // Aquí cargarías la fase de grupos o los cruces estáticos según la imagen
         // Inicializar el array para evitar errores de "undefined index" en la vista

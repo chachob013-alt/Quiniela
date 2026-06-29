@@ -5,7 +5,7 @@
     $game = \App\Models\WorldCupMatch::where('match_number', $matchId)->with('team1', 'team2')->first();
 @endphp
 
-<div class="border p-3 rounded shadow-sm bg-white w-50 my-2">
+<div class="border p-3 rounded shadow-sm bg-white w-60 my-2">
     <div class="text-xs font-bold text-gray-500 mb-2">{{ $matchId }}</div>
     
     @if($game)

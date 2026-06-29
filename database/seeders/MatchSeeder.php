@@ -31,6 +31,23 @@ class MatchSeeder extends Seeder
             ['match_number' => 'P86', 'team1_fifa_code' => 'ARG', 'team2_fifa_code' => 'CPV'],
             ['match_number' => 'P87', 'team1_fifa_code' => 'COL', 'team2_fifa_code' => 'GHA'],
             ['match_number' => 'P88', 'team1_fifa_code' => 'AUS', 'team2_fifa_code' => 'EGY'],
+            ['match_number' => 'P89', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'], // Placeholder for future matches
+            ['match_number' => 'P90', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P91', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P92', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P93', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P94', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P95', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P96', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P97', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P98', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P99', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P100', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P101', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P102', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P103', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null'],
+            ['match_number' => 'P104', 'team1_fifa_code' => 'null', 'team2_fifa_code' => 'null']
+
         ];
 
         foreach ($matches as $match) {
@@ -45,7 +62,19 @@ class MatchSeeder extends Seeder
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]);
+            } else {
+                // Log or handle the case where a team wasn't found
+                WorldCupMatch::create([
+                    'match_number' => $match['match_number'],
+                    'team1_id' => $team1 ? $team1->id : 0,
+                    'team2_id' => $team2 ? $team2->id : 0,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+               
             }
+            
+
         }
     }
 }

@@ -69,16 +69,17 @@
     border-radius: 8px;
     border: 1px solid #e2e8f0;
     position: relative;
+    
 }
 
 /* Conectores: Crea las líneas hacia la derecha o izquierda */
 .connector-right {
-    border-right: 2px solid #cbd5e0;
+    border-right: 2px solid #111418;
     margin-right: -21px;
 }
 
 .connector-left {
-    border-left: 2px solid #cbd5e0;
+    border-left: 2px solid #111418;
     margin-left: -21px;
 }
 
@@ -100,4 +101,63 @@
 /* Esto ayuda a conectar visualmente las rondas */
 .column:not(:first-child) {
     margin-top: 40px; 
+}
+
+#octavos-P89, #octavos-P91 {
+    
+     
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+#octavos-P90, #octavos-P92 {
+    
+     
+    margin-top: 95px;
+    margin-bottom: 70px;
+}
+
+#octavos-P93, #octavos-P95 {
+    
+     
+    margin-top: 100px;
+    margin-bottom: 75px;
+}
+#octavos-P94, #octavos-P96 {
+    
+    
+    margin-top: 95px;
+    margin-bottom: 80px;
+}
+
+#octavos-P97, #octavos-P99 {
+    
+     
+    margin-top: 275px;
+    margin-bottom: 75px;
+}
+#octavos-P98, #octavos-P100 {
+    
+    
+    margin-top: 450px;
+    margin-bottom: 80px;
+}
+#octavos-P101, #octavos-P102 {
+    
+    
+    margin-top: 600px;
+    margin-bottom: 80px;
+}
+
+#octavos-P104 {
+    
+    
+    margin-top: 350px;
+    margin-bottom: 120px;
+}
+
+#octavos-P103 {
+    
+    
+    margin-top: 200px;
+    margin-bottom: 80px;
 }
