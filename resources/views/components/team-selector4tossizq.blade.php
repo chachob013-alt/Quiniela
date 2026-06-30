@@ -19,7 +19,7 @@
                                                 
                                                 <div class="flex items-center gap-3">
                                                     <template x-if="selectedTeam">
-                                                        <img :src="'{{ asset('images/flags/') }}'+ selectedTeam.code'+'.png'" alt="" 
+                                                        <img :src="selectedTeam.url" alt="" 
                                                             class="w-6 h-4 object-cover">
                                                     </template>
                                                     <span x-text="selectedTeam ? selectedTeam.name : 'Selecc'"></span>
@@ -41,7 +41,7 @@
                                                         <input type="hidden" name="game_id" value="{{ $game->id }}">
                                                         
                                                         <div class="flex flex-col gap-2">
-                                                        <li @click="selectedTeam = {name: '{{ $game->team1->fifa_code }}', code: '{{ $game->team1->fifa_code }}', id: {{ $game->team1->id }}}; open = false; $wire.selectTeam({{ $game->team1->id }})"
+                                                        <li @click="selectedTeam = {name: '{{ $game->team1->fifa_code }}', code: '{{ $game->team1->fifa_code }}', id: {{ $game->team1->id }}, url: '{{ $game->team1->flag_url }}' }; open = false; $wire.selectTeam({{ $game->team1->id }})"
                                                         class="cursor-pointer hover:bg-indigo-600 hover:text-white px-4 py-2 flex items-center gap-3">
                                                             <label class="flex items-center justify-between p-2 border rounded cursor-pointer hover:bg-gray-50">
                                                                 <div class="flex items-center gap-2">
@@ -50,7 +50,7 @@
                                                                 </div>
                                                                 
                                                             </label></li>
-                                                            <li @click="selectedTeam = {name: '{{ $game->team2->fifa_code }}', code: '{{ $game->team2->fifa_code }}', id: {{ $game->team2->id }}}; open = false; $wire.selectTeam({{ $game->team2->id }})"
+                                                            <li @click="selectedTeam = {name: '{{ $game->team2->fifa_code }}', code: '{{ $game->team2->fifa_code }}', id: {{ $game->team2->id }}, url: '{{ $game->team2->flag_url }}'}; open = false; $wire.selectTeam({{ $game->team2->id }})"
                                                         class="cursor-pointer hover:bg-indigo-600 hover:text-white px-4 py-2 flex items-center gap-3">
                                                             <label class="flex items-center justify-between p-2 border rounded cursor-pointer hover:bg-gray-50">
                                                                 <div class="flex items-center gap-2">
