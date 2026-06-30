@@ -28,6 +28,7 @@
 
         <div class="flex flex-col gap-4"> Partido  Final
             <x-team-selectorfinal :bracket-structure1="$bracketStructure1" />
+            
         </div>
 
 
